@@ -111,7 +111,7 @@ UNICODE_STRING* kstring::GetUnicodeString(PUNICODE_STRING pUnicodeString) {
 }
 
 wchar_t* kstring::Allocate(size_t chars, const wchar_t* src) {
-	auto str = static_cast<wchar_t*>(ExAllocatePoolWithTag(m_Pool, sizeof(WCHAR) * (chars + 1), m_Tag));
+	auto str = static_cast<wchar_t*>(ExAllocatePool2(m_Pool, sizeof(WCHAR) * (chars + 1), m_Tag));
 	if (!str) {
 		KdPrint(("Failed to allocate kstring of length %d chars\n", chars));
 		return nullptr;

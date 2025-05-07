@@ -696,7 +696,7 @@ bool IsDeleteAllowed(const PEPROCESS Process) {
 
 	auto size = 300;
 	bool allowDelete = true;
-	auto processName = (UNICODE_STRING*)ExAllocatePoolWithTag(PagedPool, size, DRIVER_TAG);
+	auto processName = (UNICODE_STRING*)ExAllocatePool2(PagedPool, size, DRIVER_TAG);
 
 	if (processName) {
 		RtlZeroMemory(processName, size);	// ensure string will be NULL-terminated

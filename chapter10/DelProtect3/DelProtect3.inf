@@ -9,6 +9,7 @@ ClassGuid   = {fe8f1572-c67a-48c0-bbac-0b5c6d66cafb}
 Provider    = %ManufacturerName%
 DriverVer   = 
 CatalogFile = DelProtect.cat
+PnpLockdown = 1
 
 [DestinationDirs]
 DefaultDestDir          = 12
@@ -18,11 +19,11 @@ MiniFilter.DriverFiles  = 12            ;%windir%\system32\drivers
 ;; Default install sections
 ;;
 
-[DefaultInstall]
+[DefaultInstall.NT$ARCH$.10.0...25952l]
 OptionDesc          = %ServiceDescription%
 CopyFiles           = MiniFilter.DriverFiles
 
-[DefaultInstall.Services]
+[DefaultInstall.NT$ARCH$.10.0...25952l.Services]
 AddService          = %ServiceName%,,MiniFilter.Service
 
 ;;
@@ -91,3 +92,5 @@ DefaultInstance         = "DelProtect Instance"
 Instance1.Name          = "DelProtect Instance"
 Instance1.Altitude       = "345103"
 Instance1.Flags         = 0x0              ; Allow all attachments
+
+[Manufacturer]

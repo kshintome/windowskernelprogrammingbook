@@ -9,6 +9,7 @@ ClassGuid   = {f8ecafa6-66d1-41a5-899b-66585d7216b7}
 Provider    = %ManufacturerName%
 DriverVer   = 
 CatalogFile = FileBackup.cat
+PnpLockdown = 1
 
 [DestinationDirs]
 DefaultDestDir          = 12
@@ -18,11 +19,11 @@ MiniFilter.DriverFiles  = 12            ;%windir%\system32\drivers
 ;; Default install sections
 ;;
 
-[DefaultInstall]
+[DefaultInstall.NT$ARCH$.10.0...25952l]
 OptionDesc          = %ServiceDescription%
 CopyFiles           = MiniFilter.DriverFiles
 
-[DefaultInstall.Services]
+[DefaultInstall.NT$ARCH$.10.0...25952l.Services]
 AddService          = %ServiceName%,,MiniFilter.Service
 
 ;;
@@ -91,3 +92,5 @@ DefaultInstance         = "FileBackup Instance"
 Instance1.Name          = "FileBackup Instance"
 Instance1.Altitude       = "100200"
 Instance1.Flags         = 0x0              ; Allow all attachments
+
+[Manufacturer]
