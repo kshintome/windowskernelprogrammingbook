@@ -19,21 +19,22 @@ MiniFilter.DriverFiles  = 12            ;%windir%\system32\drivers
 ;; Default install sections
 ;;
 
-[DefaultInstall.NT$ARCH$.10.0...25952l]
+[DefaultInstall.NT$ARCH$]
 OptionDesc          = %ServiceDescription%
 CopyFiles           = MiniFilter.DriverFiles
 
-[DefaultInstall.NT$ARCH$.10.0...25952l.Services]
+[DefaultInstall.NT$ARCH$.Services]
 AddService          = %ServiceName%,,MiniFilter.Service
 
 ;;
 ;; Default uninstall sections
 ;;
 
-[DefaultUninstall]
+[DefaultUninstall.NT$ARCH$]
+LegacyUninstall = 1
 DelFiles   = MiniFilter.DriverFiles
 
-[DefaultUninstall.Services]
+[DefaultUninstall.NT$ARCH$.Services]
 DelService = %ServiceName%,0x200      ;Ensure service is stopped before deleting
 
 ;
